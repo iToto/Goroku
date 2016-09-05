@@ -2,7 +2,7 @@ package main
 
 import (
 	"database/sql"
-	"encoding/json"
+	// "encoding/json"
 	"fmt"
 	_ "github.com/lib/pq"
 	"log"
@@ -64,7 +64,7 @@ func FooIndex(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	// jsonString, _ := json.Marshal(foos)
-	jsonString := "{ \"foo\": \"bar\"}"
+	jsonString := []byte(`{"foo":"bar"}`)
 
 	w.Write(jsonString)
 }

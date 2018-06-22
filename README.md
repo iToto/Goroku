@@ -11,7 +11,7 @@ to follow to get it running in your local.
     $ rm -rf .git
     $ git init .
     ```
-2. Install Heroku Toolbelt:
+1. Install Heroku Toolbelt:
 
     Via Homebrew:
 
@@ -21,15 +21,15 @@ to follow to get it running in your local.
 
     Or Via [Heroku][1]
 
-3. Create your .env file
+1. Create your .env file
 
     ```sh
     $ cp env.example .env
     ```
 
-4. Update any values in `.env` as needed
+1. Update any values in `.env` as needed
 
-5. Run the application locally
+1. Run the application locally
 
     ```sh
     $ heroku local
@@ -38,16 +38,16 @@ to follow to get it running in your local.
 ## Deploying
 Assuming you have the proper heroku app [setup + git remote][2]
 
-1. Remove `vendor` and `Godeps` from .gitignore
+1. Remove `vendor` from .gitignore
 
-2. Save and commit dependencies
+1. Save and commit dependencies
 
     ```sh
-    $ godep save
+    $ govendor add +external
     $ git commit -am "initial import of dependencies for heroku"
     ```
 
-3. Deploy
+1. Deploy
 
     ```sh
     $ git push heroku [BRANCH]:master
